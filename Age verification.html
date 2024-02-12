@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age Verification</title>
+</head>
+<body>
+
+<script>
+    const age = prompt("Tu edad:");
+
+    if (age >= 18) {
+        window.alert("Above 18");
+
+        // Use a button click to trigger the confirmation
+        const buttonClick = () => {
+            const confirmResult = window.confirm("Do you want to proceed to Google?");
+            
+            if (confirmResult) {
+                window.open("https://www.google.com", "_blank");
+            } else {
+                // Handle the case where the user chose not to proceed
+                window.alert("You chose not to proceed to Google.");
+            }
+        };
+
+        // Create a button and attach the buttonClick function to its click event
+        const button = document.createElement("button");
+        button.textContent = "Proceed";
+        button.addEventListener("click", buttonClick);
+
+        // Append the button to the body
+        document.body.appendChild(button);
+    } else {
+        // Handle the case where the user is below 18
+        window.alert("You are below 18.");
+    }
+</script>
+
+</body>
+</html>
+

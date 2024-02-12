@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+
+<form name="myForm" action="">
+    <label for="age">Age</label>
+    <input type="number" name="age" id="age" />
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    var checkAge = (e) => {
+        if (document.querySelector('#age').value < 18) {
+            // Preventing the submit of the form
+            e.preventDefault();
+
+            // Displaying the modal window
+            alert("You have to be older than 18!");
+        }
+    };
+
+    // Listening to the click event on the button
+    document.querySelector('button').addEventListener('click', checkAge);
+
+    if (confirm("Do you want to continue?")) {
+        // continue here
+    }
+</script>
+
+</body>
+</html>
